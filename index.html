@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Odoo Quick Timesheet</title>
+<meta name="description" content="Privacy policy of the Odoo Quick Timesheet browser extension.">
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0;
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: #f6f7f9;
+    color: #1d2330;
+  }
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px 20px 56px;
+    background: #fff;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  h1 { font-size: 1.8rem; margin: 0 0 4px; }
+  h2 { font-size: 1.2rem; margin: 32px 0 8px; padding-top: 8px; border-top: 1px solid #e3e6eb; }
+  .updated { color: #5b6475; margin: 0 0 24px; }
+  code { background: #eef0f4; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+  a { color: #1a5fb4; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #14171d; color: #e4e7ec; }
+    main { background: #1b1f27; }
+    h2 { border-top-color: #2e3440; }
+    .updated { color: #9aa3b2; }
+    code { background: #2a303b; }
+    a { color: #7db3ff; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy — Odoo Quick Timesheet</h1>
+  <p class="updated">Last updated: 2026-10-28</p>
+
+  <p>Odoo Quick Timesheet is a browser extension that helps users of an Odoo instance
+  log timesheet entries and export project reports. This policy describes what the
+  extension actually does.</p>
+
+  <h2>What the extension does</h2>
+  <p>The extension does nothing until the user clicks its toolbar icon. It then runs
+  on the currently open tab only (Chrome <code>activeTab</code> permission) and shows a panel
+  inside the Odoo page.</p>
+
+  <h2>Data the extension reads</h2>
+  <p>The panel communicates only with the Odoo server that hosts the open page, using
+  that page's existing session (same-origin requests to <code>/web/dataset/call_kw</code> and
+  <code>/web/session/get_session_info</code>). It reads:</p>
+  <ul>
+    <li>projects and tasks (names, budgets/planned hours),</li>
+    <li>timesheet entries (employee name, date, hours, description, start/end time,
+    work type, work location, vehicle, license, linked sales order and order line),</li>
+    <li>the current user's session information and public holidays/leaves needed for
+    the time-entry forms.</li>
+  </ul>
+
+  <h2>Data the extension writes</h2>
+  <p>Timesheet entries are created in Odoo (<code>account.analytic.line</code>) only when the user
+  explicitly submits the manual-entry form or confirms the copy dialog. The extension
+  does not edit or delete existing Odoo records.</p>
+
+  <h2>Data stored locally</h2>
+  <p>The extension stores its settings in the browser's <code>localStorage</code> of the Odoo site
+  (not in any account or cloud):</p>
+  <ul>
+    <li>visible projects and preferred default values (record IDs),</li>
+    <li>task budget values entered by the user,</li>
+    <li>report export layout (format, language, sheets, columns and their order).</li>
+  </ul>
+  <p>Clearing the site data for the Odoo domain removes these settings.</p>
+
+  <h2>Reports</h2>
+  <p>XLSX and PDF reports are generated locally in the browser and saved to the
+  user's device through the browser's download mechanism. Report content is not
+  uploaded anywhere.</p>
+
+  <h2>Third parties</h2>
+  <p>The extension does not send any data to the developer or to any third party. It
+  contains no analytics, telemetry, advertising or tracking. The only network
+  requests are to the Odoo server of the open page and to the extension's own
+  bundled logo file. Data is not sold or shared.</p>
+
+  <h2>Remote code</h2>
+  <p>The extension does not load or execute remote code. All code is bundled in the
+  package. It does not use <code>eval</code>, <code>new Function</code> or externally hosted scripts.</p>
+
+  <h2>Permissions</h2>
+  <ul>
+    <li><code>activeTab</code> — temporary access to the tab where the user clicked the icon.</li>
+    <li><code>scripting</code> — injecting the bundled panel script into that tab.</li>
+  </ul>
+  <p>The extension requests no host permissions.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:pollokmichal@gmail.com">pollokmichal@gmail.com</a></p>
+</main>
+</body>
+</html>
